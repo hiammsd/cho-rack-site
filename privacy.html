@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Cho Rack</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+         max-width: 760px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; }
+  h1 { font-size: 1.7rem; } h2 { font-size: 1.15rem; margin-top: 1.8rem; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+  th, td { border: 1px solid #8886; padding: .45rem .6rem; text-align: left; vertical-align: top; }
+  mark { background: #ffe58a; color: #111; padding: 0 .25em; border-radius: 3px; }
+  .meta { opacity: .75; }
+</style>
+</head>
+<body>
+<h1>Privacy Policy — Cho Rack</h1>
+<p class="meta"><strong>Effective date:</strong> 18 November 2026<br>
+<strong>Contact:</strong> laplaiall4@gmail.com</p>
+
+<p>Cho Rack ("the Bot") is a Discord bot that replaces broken
+social-media link previews with working embeds. This policy explains what data
+the Bot processes and stores, and the choices you have.</p>
+
+<h2>1. What the Bot does with messages</h2>
+<p>When a message posted in a server channel contains a link to a supported
+platform (X/Twitter, Bluesky, Pixiv, Twitch, Reddit, TikTok, Instagram,
+Threads, Facebook), the Bot reads the message content in memory to detect the
+link, hides the original preview, and posts a fixed preview.</p>
+<p><strong>The Bot does not store message content.</strong> Message text is
+processed in memory only and is never written to a database or log.</p>
+
+<h2>2. Data the Bot stores</h2>
+<table>
+  <tr><th>Data</th><th>Why</th><th>Retention</th></tr>
+  <tr>
+    <td>Server (guild) ID and per-platform on/off settings</td>
+    <td>Remember server preferences set via <code>/settings</code></td>
+    <td>Until the Bot is removed from the server (see §5)</td>
+  </tr>
+  <tr>
+    <td>Channel ID and per-channel settings</td>
+    <td>Same as above</td>
+    <td>Same as above</td>
+  </tr>
+  <tr>
+    <td>User ID and opt-out flag</td>
+    <td>Remember users who ran <code>/ignore-me</code> so the Bot skips their links</td>
+    <td>Until the user toggles it off or requests deletion</td>
+  </tr>
+  <tr>
+    <td>Fix log: server/channel/message IDs, author ID, the normalized
+        (tracking-parameter-stripped) URL, platform, success/failure,
+        processing time</td>
+    <td>Operate the 🗑 delete-my-fix feature, prevent duplicate fixes, debug
+        failures and detect broken upstream services</td>
+    <td>90 days, then deleted</td>
+  </tr>
+</table>
+<p>The Bot does <strong>not</strong> collect: message content, direct messages
+(the Bot does not operate in DMs), email addresses, real names, or payment data.</p>
+
+<h2>3. Third parties</h2>
+<p>To build a fixed preview, the URL you posted is sent to the relevant
+platform or embed service (for example the Bluesky public API, FxEmbed,
+vxTwitter, phixiv, TikWM, or similar services listed in the Bot's
+documentation). Those services receive the link — the same information anyone
+clicking the link would reveal. No Discord user data is sold or shared for
+advertising, ever.</p>
+
+<h2>4. Your choices</h2>
+<ul>
+  <li>Run <code>/ignore-me</code> at any time to make the Bot skip your links completely.</li>
+  <li>Server administrators can disable the Bot per platform or per channel
+      with <code>/settings</code>, or remove the Bot from the server entirely.</li>
+  <li>To request deletion of stored data about you (opt-out record, fix-log
+      entries), email laplaiall4@gmail.com with your Discord user ID.
+      Requests are handled within 30 days.</li>
+</ul>
+
+<h2>5. Server removal</h2>
+<p>When the Bot is removed from a server, that server's settings are marked
+for deletion and permanently erased after 30 days.</p>
+
+<h2>6. Children</h2>
+<p>The Bot is not directed at children under 13 and does not knowingly store
+data about them beyond the Discord IDs described above, which Discord itself
+controls under its own terms.</p>
+
+<h2>7. Changes</h2>
+<p>Material changes to this policy will be announced in the Bot's support
+channel and by updating the effective date above.</p>
+</body>
+</html>
