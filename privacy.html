@@ -17,7 +17,7 @@
 </head>
 <body>
 <h1>Privacy Policy — Cho Rack</h1>
-<p class="meta"><strong>Effective date:</strong> 18 November 2026<br>
+<p class="meta"><strong>Effective date:</strong> 20 November 2026<br>
 <strong>Contact:</strong> laplaiall4@gmail.com</p>
 
 <p>Cho Rack ("the Bot") is a Discord bot that replaces broken
@@ -29,8 +29,24 @@ the Bot processes and stores, and the choices you have.</p>
 platform (X/Twitter, Bluesky, Pixiv, Twitch, Reddit, TikTok, Instagram,
 Threads, Facebook), the Bot reads the message content in memory to detect the
 link, hides the original preview, and posts a fixed preview.</p>
+<p>The Bot also works outside servers, in exactly two ways:</p>
+<ul>
+  <li><strong>Direct messages with the Bot.</strong> If you send a link in a
+      direct-message conversation with the Bot itself, the Bot processes that
+      message the same way and posts the fixed preview in the same
+      conversation. The Bot cannot hide the preview of your own message in a
+      DM, because Discord does not allow bots to edit other users' DM
+      messages.</li>
+  <li><strong>The "Fix link" command (user-installed app).</strong> If you
+      install Cho Rack to your Discord account, you can right-click any
+      message and choose Apps → Fix link. The Bot then processes the links in
+      that one selected message and posts the fixed preview in the
+      conversation. The Bot does not read any other messages in that
+      conversation.</li>
+</ul>
 <p><strong>The Bot does not store message content.</strong> Message text is
-processed in memory only and is never written to a database or log.</p>
+processed in memory only and is never written to a database or log. The Bot
+never reads direct messages between users on its own.</p>
 
 <h2>2. Data the Bot stores</h2>
 <table>
@@ -47,11 +63,12 @@ processed in memory only and is never written to a database or log.</p>
   </tr>
   <tr>
     <td>User ID and opt-out flag</td>
-    <td>Remember users who ran <code>/ignore-me</code> so the Bot skips their links</td>
+    <td>Remember users who ran <code>/ignore-me</code> so the Bot skips their links in servers</td>
     <td>Until the user toggles it off or requests deletion</td>
   </tr>
   <tr>
-    <td>Fix log: server/channel/message IDs, author ID, the normalized
+    <td>Fix log: server/channel/message IDs (for DM fixes, a DM marker
+        instead of a server ID), author ID, the normalized
         (tracking-parameter-stripped) URL, platform, success/failure,
         processing time</td>
     <td>Operate the 🗑 delete-my-fix feature, prevent duplicate fixes, debug
@@ -59,8 +76,8 @@ processed in memory only and is never written to a database or log.</p>
     <td>90 days, then deleted</td>
   </tr>
 </table>
-<p>The Bot does <strong>not</strong> collect: message content, direct messages
-(the Bot does not operate in DMs), email addresses, real names, or payment data.</p>
+<p>The Bot does <strong>not</strong> collect: message content, email
+addresses, real names, or payment data.</p>
 
 <h2>3. Third parties</h2>
 <p>To build a fixed preview, the URL you posted is sent to the relevant
@@ -72,7 +89,11 @@ advertising, ever.</p>
 
 <h2>4. Your choices</h2>
 <ul>
-  <li>Run <code>/ignore-me</code> at any time to make the Bot skip your links completely.</li>
+  <li>Run <code>/ignore-me</code> at any time to make the Bot skip your links completely in servers.</li>
+  <li>In a DM with the Bot, you are in control: the Bot only reacts to links
+      you send it there. You can stop at any time, or block the Bot.</li>
+  <li>If you installed Cho Rack to your account, you can uninstall it at any
+      time in Discord under Settings → Authorized Apps.</li>
   <li>Server administrators can disable the Bot per platform or per channel
       with <code>/settings</code>, or remove the Bot from the server entirely.</li>
   <li>To request deletion of stored data about you (opt-out record, fix-log
